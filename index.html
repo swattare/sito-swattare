@@ -3,31 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terry Davis Tribute</title>
+    <title>TempleOS | Divine Interface</title>
     <style>
-        body { background-color: #0000aa; color: white; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
-        img { width: 100%; max-width: 400px; border: 5px solid white; margin: 20px 0; }
-        h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
-        .box { border: 3px solid #ffcc00; padding: 15px; background: #aa0000; margin: 20px auto; max-width: 500px; font-weight: bold; }
-        button { background: #ffcc00; color: black; border: none; padding: 20px; font-size: 1.2rem; font-weight: bold; cursor: pointer; width: 100%; max-width: 300px; }
+        body { 
+            background-color: #0000aa; 
+            margin: 0; padding: 20px;
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh; font-family: 'Courier New', monospace;
+        }
+        .monitor {
+            background-color: #ffffff;
+            width: 100%; max-width: 640px;
+            border: 5px solid #aa0000;
+            padding: 0; display: flex; flex-direction: column;
+        }
+        .header { background: #0000aa; color: white; padding: 5px; text-align: center; font-weight: bold; }
+        .content { padding: 20px; color: #0000aa; font-weight: 900; }
+        .code-block { background: #eeeeee; border: 1px dashed #0000aa; padding: 15px; margin: 20px 0; }
+        .blink { animation: blinker 1s step-start infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+        .red { color: #aa0000; }
     </style>
 </head>
 <body>
-    <h1>Terry A. Davis</h1>
-    
-    <img src="https://upload.wikimedia.org/wikipedia/en/8/82/Terry_A._Davis_2017.jpg" alt="Terry Davis">
-
-    <div class="box">
-        "God's temple is a 640x480 16 color display."
+    <div class="monitor">
+        <div class="header">TempleOS v5.05 - TERRY A. DAVIS</div>
+        <div class="content">
+            <div class="red">-- THE SMARTEST PROGRAMMER EVER --</div>
+            <br>
+            <div class="code-block">
+                U0 Main() {<br>
+                &nbsp;&nbsp;Print("640x480 16 Colors.\n");<br>
+                &nbsp;&nbsp;GodSpeak();<br>
+                }
+            </div>
+            <p>SYSTEM STATUS: <span class="blink">DIVINE_COMMUNICATION_READY</span></p>
+            <br>
+            <p class="red" style="font-size: 0.8rem;">"God's temple is a 640x480 16 color display."</p>
+        </div>
     </div>
-
-    <p>CLICCA SOTTO PER LA MUSICA</p>
-    <button onclick="document.getElementById('audio').play()">ATTIVA AUDIO SACRO</button>
-
-    <audio id="audio" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    </audio>
-
-    <p style="margin-top: 50px; font-size: 0.8rem;">Created by Swattare</p>
 </body>
 </html>
