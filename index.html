@@ -3,44 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TempleOS | Divine Interface</title>
+    <title>Terry A. Davis - Il Vostro Santuario</title>
     <style>
-        body { 
-            background-color: #0000aa; 
-            margin: 0; padding: 20px;
+        body {
+            background-color: #0c0c0c; /* Grigio-nero profondo */
+            color: #00ff41; /* Verde acido, simbolo di codice e vita */
+            font-family: 'Terminus', 'Courier New', monospace; /* Font tecnico */
+            margin: 0; padding: 0;
             display: flex; justify-content: center; align-items: center;
-            height: 100vh; font-family: 'Courier New', monospace;
+            height: 100vh; overflow: hidden;
+            flex-direction: column;
         }
-        .monitor {
-            background-color: #ffffff;
-            width: 100%; max-width: 640px;
-            border: 5px solid #aa0000;
-            padding: 0; display: flex; flex-direction: column;
+        .monitor-frame {
+            border: 3px solid #00ff41;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 90%; max-width: 700px;
+            text-align: center;
+            position: relative;
         }
-        .header { background: #0000aa; color: white; padding: 5px; text-align: center; font-weight: bold; }
-        .content { padding: 20px; color: #0000aa; font-weight: 900; }
-        .code-block { background: #eeeeee; border: 1px dashed #0000aa; padding: 15px; margin: 20px 0; }
-        .blink { animation: blinker 1s step-start infinite; }
-        @keyframes blinker { 50% { opacity: 0; } }
-        .red { color: #aa0000; }
+        .header-bar {
+            background-color: #00ff41;
+            color: black;
+            padding: 5px 0;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            color: #ff003c; /* Rosso sangue per un tocco di impatto */
+            text-shadow: 0 0 10px rgba(255, 0, 60, 0.6);
+        }
+        .quote {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-style: italic;
+            color: #00ffff; /* Ciano brillante per le citazioni */
+        }
+        .signature {
+            font-size: 1rem;
+            text-align: right;
+            margin-top: 10px;
+            color: #777777;
+        }
+        .button-glow {
+            background: #ff003c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.7);
+            transition: all 0.3s ease;
+        }
+        .button-glow:hover {
+            background: #ff3366;
+            box-shadow: 0 0 25px rgba(255, 0, 60, 1);
+            transform: scale(1.05);
+        }
+        .footer-message {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #00ff41;
+        }
+        .cursor {
+            display: inline-block;
+            width: 10px; height: 1.2em;
+            background: #00ff41;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 50% { background: transparent; } }
     </style>
 </head>
 <body>
-    <div class="monitor">
-        <div class="header">TempleOS v5.05 - TERRY A. DAVIS</div>
-        <div class="content">
-            <div class="red">-- THE SMARTEST PROGRAMMER EVER --</div>
-            <br>
-            <div class="code-block">
-                U0 Main() {<br>
-                &nbsp;&nbsp;Print("640x480 16 Colors.\n");<br>
-                &nbsp;&nbsp;GodSpeak();<br>
-                }
-            </div>
-            <p>SYSTEM STATUS: <span class="blink">DIVINE_COMMUNICATION_READY</span></p>
-            <br>
-            <p class="red" style="font-size: 0.8rem;">"God's temple is a 640x480 16 color display."</p>
+    <div class="monitor-frame">
+        <div class="header-bar">
+            TRIBUTO DIVINO A TERRY A. DAVIS
         </div>
+        <h1>
+            IL PROGRAMMATORE SCELTO DA DIO
+        </h1>
+        <div class="quote">
+            "Un programmatore non crea nulla, scopre ciò che Dio ha già messo nel codice."
+        </div>
+        <p class="signature">
+            — Terry A. Davis, Profeta di HolyC
+        </p>
+        
+        <button class="button-glow" onclick="alert('Sia fatta la volontà di Dio nel codice.');">
+            ATTIVA IL TEMPIO DIGITALE
+        </button>
+
+        <p class="footer-message">
+            _Con un semplice linguaggio, ha rivelato l'architettura divina._<span class="cursor"></span>
+        </p>
     </div>
 </body>
 </html>
