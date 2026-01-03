@@ -3,109 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terry A. Davis - Il Vostro Santuario</title>
+    <title>TempleOS Tribute</title>
     <style>
-        body {
-            background-color: #0c0c0c; /* Grigio-nero profondo */
-            color: #00ff41; /* Verde acido, simbolo di codice e vita */
-            font-family: 'Terminus', 'Courier New', monospace; /* Font tecnico */
-            margin: 0; padding: 0;
-            display: flex; justify-content: center; align-items: center;
-            height: 100vh; overflow: hidden;
-            flex-direction: column;
-        }
-        .monitor-frame {
-            border: 3px solid #00ff41;
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.8);
-            width: 90%; max-width: 700px;
-            text-align: center;
-            position: relative;
-        }
-        .header-bar {
-            background-color: #00ff41;
-            color: black;
-            padding: 5px 0;
-            font-weight: bold;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-        h1 {
-            font-size: 2.8rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            color: #ff003c; /* Rosso sangue per un tocco di impatto */
-            text-shadow: 0 0 10px rgba(255, 0, 60, 0.6);
-        }
-        .quote {
-            font-size: 1.5rem;
-            margin-top: 30px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            font-style: italic;
-            color: #00ffff; /* Ciano brillante per le citazioni */
-        }
-        .signature {
-            font-size: 1rem;
-            text-align: right;
-            margin-top: 10px;
-            color: #777777;
-        }
-        .button-glow {
-            background: #ff003c;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 30px;
-            box-shadow: 0 0 15px rgba(255, 0, 60, 0.7);
-            transition: all 0.3s ease;
-        }
-        .button-glow:hover {
-            background: #ff3366;
-            box-shadow: 0 0 25px rgba(255, 0, 60, 1);
-            transform: scale(1.05);
-        }
-        .footer-message {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #00ff41;
-        }
-        .cursor {
-            display: inline-block;
-            width: 10px; height: 1.2em;
-            background: #00ff41;
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink { 50% { background: transparent; } }
+        /* I 16 colori di Terry */
+        body { background-color: #5555ff; color: #ffffff; font-family: 'Courier New', monospace; margin: 0; padding: 0; text-align: center; }
+        .container { width: 100%; max-width: 640px; margin: 0 auto; background-color: #ffffff; color: #0000aa; border: 4px solid #aa0000; min-height: 100vh; display: flex; flex-direction: column; }
+        .top-menu { background-color: #0000aa; color: #ffffff; padding: 5px; font-weight: bold; text-align: left; font-size: 14px; }
+        .header { padding: 20px; border-bottom: 2px solid #0000aa; }
+        h1 { margin: 0; font-size: 24px; text-transform: uppercase; }
+        .main-content { padding: 30px; flex-grow: 1; line-height: 1.5; font-weight: bold; }
+        .quote-box { border: 2px dashed #aa0000; padding: 20px; margin: 20px 0; background-color: #ffff55; color: #aa0000; }
+        .footer { background-color: #0000aa; color: #ffffff; padding: 10px; font-size: 12px; }
+        .blink { animation: blinker 0.8s step-start infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+        a { color: #ff5555; text-decoration: none; }
     </style>
 </head>
 <body>
-    <div class="monitor-frame">
-        <div class="header-bar">
-            TRIBUTO DIVINO A TERRY A. DAVIS
-        </div>
-        <h1>
-            IL PROGRAMMATORE SCELTO DA DIO
-        </h1>
-        <div class="quote">
-            "Un programmatore non crea nulla, scopre ciò che Dio ha già messo nel codice."
-        </div>
-        <p class="signature">
-            — Terry A. Davis, Profeta di HolyC
-        </p>
+    <div class="container">
+        <div class="top-menu"> File  Edit  View  Go  Help  <span class="blink" style="float:right;">[TRIBUTE_MODE]</span></div>
         
-        <button class="button-glow" onclick="alert('Sia fatta la volontà di Dio nel codice.');">
-            ATTIVA IL TEMPIO DIGITALE
-        </button>
+        <div class="header">
+            <h1>TERRY A. DAVIS (1969-2018)</h1>
+            <p>The smartest programmer who ever lived.</p>
+        </div>
 
-        <p class="footer-message">
-            _Con un semplice linguaggio, ha rivelato l'architettura divina._<span class="cursor"></span>
-        </p>
+        <div class="main-content">
+            <div class="quote-box">
+                "God's temple is a 640x480 16 color display so children can make drawings for God."
+            </div>
+            
+            <p>Terry ha costruito un intero sistema operativo da solo, in 10 anni, parlando direttamente con Dio attraverso il codice.</p>
+            
+            <p style="margin-top:40px;">STATUS: <span style="color:#00aa00;">DIVINE_LINK_ESTABLISHED</span></p>
+            <p>ARCHITECTURE: 64-BIT HOLYC</p>
+            
+            <p class="blink" style="margin-top:50px;">--- PRESS ANY KEY TO PRAY ---</p>
+        </div>
+
+        <div class="footer">
+            Done. 0.0023s - Memory: 640K/640K
+        </div>
     </div>
 </body>
 </html>
