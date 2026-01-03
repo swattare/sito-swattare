@@ -3,65 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swattare Hub - Audio</title>
+    <title>TempleOS Tribute | Swattare</title>
     <style>
         body { 
-            background-color: #050505; 
-            color: #00ff41; 
-            font-family: 'Courier New', Courier, monospace; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0;
+            background-color: #ffffff; 
+            color: #0000aa; 
+            font-family: "Courier New", Courier, monospace; 
+            margin: 0; 
+            text-align: center;
         }
-        .container { 
-            text-align: center; 
-            border: 1px solid #00ff41; 
-            padding: 50px; 
-            box-shadow: 0 0 20px #00ff41;
-            background: rgba(0, 20, 0, 0.9);
+        header { 
+            background-color: #0000aa; 
+            color: #ffffff; 
+            padding: 20px; 
+            border-bottom: 5px solid #aa0000;
         }
-        h1 { font-size: 3rem; letter-spacing: 10px; animation: glitch 2s infinite; }
-        .btn-audio {
-            background: transparent;
-            color: #00ff41;
-            border: 1px solid #00ff41;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-family: inherit;
-            margin-top: 20px;
-            transition: 0.3s;
+        .hero { padding: 50px 10%; }
+        h1 { font-size: 3rem; text-transform: uppercase; }
+        .quote { 
+            font-style: italic; 
+            color: #aa0000; 
+            font-weight: bold; 
+            margin: 20px 0;
+            font-size: 1.2rem;
         }
-        .btn-audio:hover { background: #00ff41; color: black; }
-        @keyframes glitch {
-            0% { text-shadow: 2px 0 red, -2px 0 blue; }
-            50% { text-shadow: -2px 0 red, 2px 0 blue; }
-            100% { text-shadow: 2px 0 red, -2px 0 blue; }
+        .temple-box {
+            border: 4px double #0000aa;
+            margin: 30px auto;
+            max-width: 700px;
+            padding: 20px;
+            background-color: #f0f0f0;
         }
+        .c-code {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 15px;
+            text-align: left;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        footer { margin-top: 50px; padding: 20px; font-size: 0.8rem; opacity: 0.7; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>SWATTARE</h1>
-        <p>[ AUDIO SYSTEM READY ]</p>
-        <button class="btn-audio" onclick="playAudio()">AVVIA PROTOCOLLO AUDIO</button>
-        <audio id="bgm" loop>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        </audio>
+
+    <header>
+        <h1>God's Third Temple</h1>
+        <p>A Tribute to Terry A. Davis & TempleOS</p>
+    </header>
+
+    <div class="hero">
+        <p class="quote">"God's temple is a 640x480 16 color display."</p>
+        
+        <div class="temple-box">
+            <h3>Terry A. Davis (1969 – 2018)</h3>
+            <p>Il programmatore che ha costruito un intero sistema operativo, un compilatore e un kernel da solo, parlando direttamente con Dio attraverso il suo codice.</p>
+        </div>
+
+        <div class="c-code">
+            <p>// HolyC - The language of TempleOS</p>
+            <p>U0 Song() {</p>
+            <p>  while (TRUE) {</p>
+            <p>    Play("CDE");</p>
+            <p>  }</p>
+            <p>}</p>
+        </div>
     </div>
 
-    <script>
-        function playAudio() {
-            var audio = document.getElementById("bgm");
-            if (audio.paused) {
-                audio.play();
-                document.querySelector('.btn-audio').innerText = "AUDIO ATTIVO";
-            } else {
-                audio.pause();
-                document.querySelector('.btn-audio').innerText = "AUDIO IN PAUSA";
-            }
-        }
-    </script>
+    <footer>
+        <p>Sito creato da Swattare tramite Termux & GitHub Pages</p>
+    </footer>
+
 </body>
 </html>
