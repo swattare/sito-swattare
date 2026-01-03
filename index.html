@@ -3,96 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TempleOS | Divine Tribute</title>
+    <title>Terry Davis Tribute</title>
     <style>
-        body { 
-            background-color: #555555; 
-            color: #0000aa; 
-            font-family: "Courier New", monospace; 
-            display: flex; justify-content: center; align-items: center; 
-            height: 100vh; margin: 0;
-        }
-        .os-window {
-            width: 640px; height: 480px;
-            background-color: #ffffff;
-            border: 4px solid #0000aa;
-            box-shadow: 10px 10px 0px #222;
-            display: flex; flex-direction: column;
-        }
-        header {
-            background-color: #0000aa; color: white;
-            padding: 5px 10px; font-weight: bold;
-            display: flex; justify-content: space-between;
-        }
-        .content { padding: 20px; text-align: center; overflow-y: auto; }
-        .terry-img {
-            width: 180px; border: 3px solid #aa0000;
-            margin: 10px 0;
-        }
-        h1 { font-size: 1.5rem; margin: 10px 0; text-transform: uppercase; }
-        .holy-c {
-            background-color: #f0f0f0; border: 1px dashed #0000aa;
-            padding: 10px; text-align: left; font-size: 0.8rem; margin: 15px 0;
-        }
-        .btn-divine {
-            background-color: #ffffff; color: #aa0000;
-            border: 2px solid #aa0000; padding: 10px;
-            font-weight: bold; cursor: pointer; font-family: "Courier New";
-        }
-        .btn-divine:hover { background-color: #aa0000; color: white; }
+        body { background-color: #0000aa; color: white; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
+        img { width: 100%; max-width: 400px; border: 5px solid white; margin: 20px 0; }
+        h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
+        .box { border: 3px solid #ffcc00; padding: 15px; background: #aa0000; margin: 20px auto; max-width: 500px; font-weight: bold; }
+        button { background: #ffcc00; color: black; border: none; padding: 20px; font-size: 1.2rem; font-weight: bold; cursor: pointer; width: 100%; max-width: 300px; }
     </style>
 </head>
 <body>
+    <h1>Terry A. Davis</h1>
+    
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/82/Terry_A._Davis_2017.jpg" alt="Terry Davis">
 
-    <div class="os-window">
-        <header>
-            <span>TempleOS v5.05</span>
-            <span>X</span>
-        </header>
-        <div class="content">
-            <h1>Terry A. Davis (1969-2018)</h1>
-            <img src="https://templeos.org/LogoLarge.PNG" alt="Terry" class="terry-img">
-            
-            <div class="holy-c">
-                <p>// "God's Third Temple"</p>
-                <p>U0 Main() {</p>
-                <p>  Print("Hello God\n");</p>
-                <p>  PlayMusic();</p>
-                <p>}</p>
-            </div>
-
-            <button class="btn-divine" onclick="playMusic()">PREGA E ASCOLTA</button>
-            <p id="status" style="font-size: 0.7rem; color: #aa0000;"></p>
-
-            <audio id="templeAudio" loop>
-                <source src="https://archive.org/download/TempleOS_Music/God%20is%20Real.mp3" type="audio/mpeg">
-            </audio>
-        </div>
+    <div class="box">
+        "God's temple is a 640x480 16 color display."
     </div>
 
-    <script>
-        function playMusic() {
-            var audio = document.getElementById("templeAudio");
-            var status = document.getElementById("status");
-            if (audio.paused) {
-                audio.play();
-                status.innerText = "MUSICA SACRA IN RIPRODUZIONE...";
-            } else {
-                audio.pause();
-                status.innerText = "MUSICA IN PAUSA";
-            }
-        }
+    <p>CLICCA SOTTO PER LA MUSICA</p>
+    <button onclick="document.getElementById('audio').play()">ATTIVA AUDIO SACRO</button>
 
-        // Easter Egg
-        let input = "";
-        window.addEventListener("keydown", (e) => {
-            input += e.key.toUpperCase();
-            if (input.endsWith("GOD")) {
-                document.body.style.backgroundColor = "#aa0000";
-                alert("CONTATTO STABILITO");
-                input = "";
-            }
-        });
-    </script>
+    <audio id="audio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <p style="margin-top: 50px; font-size: 0.8rem;">Created by Swattare</p>
 </body>
 </html>
