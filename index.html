@@ -5,48 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TempleOS | Divine Tribute</title>
     <style>
-        :root { --temple-blue: #0000aa; --temple-red: #aa0000; --gold: #ffcc00; }
-        body { background-color: #000; color: white; font-family: 'Courier New', monospace; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; flex-direction: column; }
-        .monitor { border: 15px solid #333; border-radius: 10px; width: 90%; max-width: 800px; background: #fff; color: var(--temple-blue); box-shadow: 0 0 50px rgba(0,255,65,0.2); overflow: hidden; position: relative; }
-        header { background: var(--temple-blue); color: white; padding: 10px; text-align: center; border-bottom: 4px solid var(--temple-red); font-weight: bold; }
-        .content { padding: 30px; text-align: center; }
-        .profile-img { width: 150px; border: 4px solid var(--temple-blue); border-radius: 50%; margin-bottom: 20px; box-shadow: 5px 5px 0px var(--temple-red); }
-        h1 { font-size: 2rem; border-bottom: 2px solid var(--temple-blue); margin-top: 0; }
-        .quote { color: var(--temple-red); font-weight: bold; border-left: 4px solid var(--temple-red); padding: 10px; margin: 20px 0; text-align: left; background: #f9f9f9; }
-        .music-player { margin-top: 20px; background: #eee; padding: 10px; border: 1px dashed var(--temple-blue); }
-        #divine-message { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--gold); color: black; padding: 40px; border: 10px double black; z-index: 1000; text-align: center; font-weight: bold; }
+        body { 
+            background-color: #555555; 
+            color: #0000aa; 
+            font-family: "Courier New", monospace; 
+            display: flex; justify-content: center; align-items: center; 
+            height: 100vh; margin: 0;
+        }
+        .os-window {
+            width: 640px; height: 480px;
+            background-color: #ffffff;
+            border: 4px solid #0000aa;
+            box-shadow: 10px 10px 0px #222;
+            display: flex; flex-direction: column;
+        }
+        header {
+            background-color: #0000aa; color: white;
+            padding: 5px 10px; font-weight: bold;
+            display: flex; justify-content: space-between;
+        }
+        .content { padding: 20px; text-align: center; overflow-y: auto; }
+        .terry-img {
+            width: 180px; border: 3px solid #aa0000;
+            margin: 10px 0;
+        }
+        h1 { font-size: 1.5rem; margin: 10px 0; text-transform: uppercase; }
+        .holy-c {
+            background-color: #f0f0f0; border: 1px dashed #0000aa;
+            padding: 10px; text-align: left; font-size: 0.8rem; margin: 15px 0;
+        }
+        .btn-divine {
+            background-color: #ffffff; color: #aa0000;
+            border: 2px solid #aa0000; padding: 10px;
+            font-weight: bold; cursor: pointer; font-family: "Courier New";
+        }
+        .btn-divine:hover { background-color: #aa0000; color: white; }
     </style>
 </head>
 <body>
-    <div class="monitor" id="main-frame">
-        <header>TempleOS v5.05 Tribute - [DIVINE MUSIC ACTIVE]</header>
+
+    <div class="os-window">
+        <header>
+            <span>TempleOS v5.05</span>
+            <span>X</span>
+        </header>
         <div class="content">
-            <img src="https://upload.wikimedia.org/wikipedia/en/8/82/Terry_A._Davis_2017.jpg" alt="Terry A. Davis" class="profile-img">
-            <h1>Terry A. Davis</h1>
-            <p>> "The smartest programmer that ever lived."</p>
-            <div class="quote">"God's temple is a 640x480 16 color display. Just like Solomon's temple."</div>
+            <h1>Terry A. Davis (1969-2018)</h1>
+            <img src="https://templeos.org/LogoLarge.PNG" alt="Terry" class="terry-img">
             
-            <div class="music-player">
-                <p>🎵 TempleOS Music (Risky - Terry A. Davis)</p>
-                <iframe width="100%" height="60" src="https://www.youtube.com/embed/m78_9Y9S_xY?start=1" title="TempleOS Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="holy-c">
+                <p>// "God's Third Temple"</p>
+                <p>U0 Main() {</p>
+                <p>  Print("Hello God\n");</p>
+                <p>  PlayMusic();</p>
+                <p>}</p>
             </div>
 
-            <p style="font-size: 0.8rem; margin-top: 20px; color: #666;">Digita <strong>GOD</strong> per il contatto divino</p>
+            <button class="btn-divine" onclick="playMusic()">PREGA E ASCOLTA</button>
+            <p id="status" style="font-size: 0.7rem; color: #aa0000;"></p>
+
+            <audio id="templeAudio" loop>
+                <source src="https://archive.org/download/TempleOS_Music/God%20is%20Real.mp3" type="audio/mpeg">
+            </audio>
         </div>
     </div>
-    <div id="divine-message">✝️ DIO TI STA PARLANDO ✝️<br><small>L'informatica è sacra.</small></div>
+
     <script>
-        let keys = "";
+        function playMusic() {
+            var audio = document.getElementById("templeAudio");
+            var status = document.getElementById("status");
+            if (audio.paused) {
+                audio.play();
+                status.innerText = "MUSICA SACRA IN RIPRODUZIONE...";
+            } else {
+                audio.pause();
+                status.innerText = "MUSICA IN PAUSA";
+            }
+        }
+
+        // Easter Egg
+        let input = "";
         window.addEventListener("keydown", (e) => {
-            keys += e.key.toUpperCase();
-            if (keys.endsWith("GOD")) {
-                document.getElementById('divine-message').style.display = 'block';
-                document.getElementById('main-frame').style.filter = 'invert(1)';
-                setTimeout(() => {
-                    document.getElementById('divine-message').style.display = 'none';
-                    document.getElementById('main-frame').style.filter = 'invert(0)';
-                    keys = "";
-                }, 3000);
+            input += e.key.toUpperCase();
+            if (input.endsWith("GOD")) {
+                document.body.style.backgroundColor = "#aa0000";
+                alert("CONTATTO STABILITO");
+                input = "";
             }
         });
     </script>
