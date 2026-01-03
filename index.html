@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swattare Hub</title>
+    <title>Swattare Hub - Audio</title>
     <style>
         body { 
             background-color: #050505; 
@@ -14,7 +14,6 @@
             align-items: center; 
             height: 100vh; 
             margin: 0;
-            overflow: hidden;
         }
         .container { 
             text-align: center; 
@@ -23,19 +22,18 @@
             box-shadow: 0 0 20px #00ff41;
             background: rgba(0, 20, 0, 0.9);
         }
-        h1 { 
-            font-size: 3.5rem; 
-            text-transform: uppercase; 
-            letter-spacing: 10px;
-            animation: glitch 2s infinite;
-        }
-        .status { 
-            display: inline-block; 
-            padding: 10px 20px; 
+        h1 { font-size: 3rem; letter-spacing: 10px; animation: glitch 2s infinite; }
+        .btn-audio {
+            background: transparent;
+            color: #00ff41;
             border: 1px solid #00ff41;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: inherit;
             margin-top: 20px;
-            text-shadow: 0 0 5px #00ff41;
+            transition: 0.3s;
         }
+        .btn-audio:hover { background: #00ff41; color: black; }
         @keyframes glitch {
             0% { text-shadow: 2px 0 red, -2px 0 blue; }
             50% { text-shadow: -2px 0 red, 2px 0 blue; }
@@ -46,9 +44,24 @@
 <body>
     <div class="container">
         <h1>SWATTARE</h1>
-        <p>[ SISTEMA OPERATIVO ATTIVO ]</p>
-        <div class="status">ACCESSO AUTORIZZATO</div>
-        <p style="font-size: 0.8rem; margin-top: 30px; opacity: 0.5;">Server hosted on GitHub</p>
+        <p>[ AUDIO SYSTEM READY ]</p>
+        <button class="btn-audio" onclick="playAudio()">AVVIA PROTOCOLLO AUDIO</button>
+        <audio id="bgm" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
     </div>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("bgm");
+            if (audio.paused) {
+                audio.play();
+                document.querySelector('.btn-audio').innerText = "AUDIO ATTIVO";
+            } else {
+                audio.pause();
+                document.querySelector('.btn-audio').innerText = "AUDIO IN PAUSA";
+            }
+        }
+    </script>
 </body>
 </html>
